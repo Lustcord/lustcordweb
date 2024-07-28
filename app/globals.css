@@ -31,3 +31,19 @@ body {
     text-wrap: balance;
   }
 }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: white;
+  color: black;
+}
+
+.nav {
+  --bs-nav-link-color: white;
+  --bs-nav-link-hover-color: white;
+}
+
+.btn-outline-light.discord:hover {
+  background-color: #7289da;
+  border-color: #7289da;
+  color: white;
+}
