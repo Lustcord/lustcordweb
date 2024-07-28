@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./globals.css";
 import { Inter } from "next/font/google";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 import BootstrapClient from './components/BootstrapClient';
+import Navbar from './components/NavBar'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Navbar  />
         {children}
         <BootstrapClient />
       </body>
