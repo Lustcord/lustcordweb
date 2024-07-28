@@ -9,6 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMarsDouble, faVenusMars, faHome } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 
+
+
+
 const Navbar = () => {
     const pathname = usePathname();
 
@@ -34,7 +37,7 @@ const Navbar = () => {
                 </li>
             </ul>
             <div className="col-md-3 text-end">
-                <button type="button" className="btn btn-outline-light discord me-2"><FontAwesomeIcon icon={faDiscord} /> Login</button>
+                <Link href="/api/auth/discord" className="btn btn-outline-light discord me-2"><FontAwesomeIcon icon={faDiscord} /> Login</Link>
             </div>
         </header>
     </div>
