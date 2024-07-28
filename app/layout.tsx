@@ -8,6 +8,8 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import BootstrapClient from './components/BootstrapClient';
 import Navbar from './components/NavBar'
+import Script from 'next/script';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +28,10 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       <body>
           <Navbar  />
           {children}
+          <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          strategy="beforeInteractive"
+        />
           <BootstrapClient />
       </body>
     </html>
