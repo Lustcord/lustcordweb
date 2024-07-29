@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 import { parse } from 'querystring';
-import { getConnection } from '../../../../../lib/db'; // Adjust the path as necessary
+import { getConnection } from '@/lib/db';
+import { getSession, login } from '@/lib/lib';
 
 export async function GET(req: NextRequest) {
   const query = parse(req.url.split('?')[1]);
   const code = query.code as string;
-
+  const session = await getSession();
   try {
     // Exchange code for access token
     const response = await axios.post('https://discord.com/api/oauth2/token', new URLSearchParams({
@@ -52,7 +53,8 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // Redirect to the home page or dashboard
+    await login(user.id, user.username, user.avatar);
+
     return NextResponse.redirect(new URL('/', req.url).href);
   } catch (error) {
     console.error('Error during Discord OAuth2 flow:', error);
