@@ -24,7 +24,7 @@ export default async function Navbar(){
                     width={400}
                 />
             </Link>
-            <div className='col-md-8'>
+            <div className='col-md-6'>
             <ul className="nav nav-pills text-uppercase">
                 <li className="nav-item">
                     <Link href="/" className="nav-link"><FontAwesomeIcon icon={faHome}></FontAwesomeIcon> Home</Link>
