@@ -7,6 +7,12 @@ const nextConfig = {
                 hostname: 'media1.tenor.com',
                 port: '',
                 pathname: '/m/**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.discordapp.com',
+                port: '',
+                pathname: '/**'
             }
         ]
     }
