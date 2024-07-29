@@ -11,3 +11,11 @@ export async function getConnection() {
 
   return connection;
 }
+
+// Database fetches
+export async function getUserServers(userId: string){
+  const connection = await getConnection();
+  const result = await connection.query('SELECT * FROM guilds WHERE owner_id=?', [userId]);
+
+  return result;
+}
