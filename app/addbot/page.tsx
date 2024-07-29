@@ -16,8 +16,6 @@ const AddBot = () => {
       window.location.href = discordOauthUrl;
     }
   }, []);
-
-  return <p>Redirecting...</p>;
 };
 
 export default AddBot;
